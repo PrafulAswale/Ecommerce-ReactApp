@@ -7,7 +7,7 @@ import Navbar from "./components/Navbar";
 import ProductList from "./components/ProductList";
 import ProductDetail from "./components/ProductDetail";
 import AddProduct from "./components/AddProduct";
-import Cart from "./components/Cart";
+import CartItems from "./components/CartItems";
 import { addproducts } from "./actions";
 import customFetch from "./apiCall";
 import "./App.css";
@@ -46,7 +46,7 @@ function App() {
             element={<ProductDetail item={productDetailItem} />}
           />
           <Route path="/addproduct" element={<AddProduct />} />
-          <Route path="/cart" element={<Cart />} />
+          <Route path="/cart" element={<CartItems />} />
         </Routes>
       </Container>
     </BrowserRouter>
