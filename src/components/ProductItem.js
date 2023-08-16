@@ -11,6 +11,7 @@ import customFetch from "../apiCall";
 import { toast } from "react-toastify";
 
 function ProductItem({ item }) {
+
   const [addedItem, setAddedItem] = useState(true);
   const [title, setTitle] = useState(item.title);
   const [price, setPrice] = useState(item.price);

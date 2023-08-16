@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { NavLink } from "react-router-dom";
 import {
   AppBar,
@@ -11,11 +12,12 @@ import {
 } from "@mui/material";
 import AddBusinessRoundedIcon from "@mui/icons-material/AddBusinessRounded";
 import DrawerComp from "./DrawerComp";
+
 const Header = () => {
   const [value, setValue] = useState();
   const theme = useTheme();
   const isMatch = useMediaQuery(theme.breakpoints.down("md"));
-
+  let total = useSelector((state) => state.totalCart);
   return (
     <React.Fragment>
       <AppBar sx={{ background: "#063970" }}>
@@ -43,8 +45,9 @@ const Header = () => {
                   to="/addproduct"
                   label="Add Product"
                 />
-                <Tab LinkComponent={NavLink} to="/cart" label="Cart" />
-                <Tab label="Contact" />
+
+                <Tab LinkComponent={NavLink} to="/cart" label={"Cart"} />
+                {total !== 0 ? <strong>{total}</strong> : ""}
               </Tabs>
             </>
           )}
