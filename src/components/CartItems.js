@@ -20,7 +20,10 @@ function CartItems() {
       </Typography>
     );
   return (
-    <Box sx={{ display: "flex", gap: 2, marginTop: "7rem", width: "100%" }}>
+    <Box
+      sx={{ display: "flex", gap: 2, marginTop: "7rem", width: "100%" }}
+      value="2"
+    >
       {" "}
       <Box
         sx={{

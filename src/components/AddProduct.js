@@ -56,6 +56,7 @@ function AddProduct() {
         marginTop: "7rem",
       }}
       onSubmit={handleSubmit}
+      value="1"
     >
       <Typography variant="h3" sx={{ textAlign: "center" }}>
         Add Product

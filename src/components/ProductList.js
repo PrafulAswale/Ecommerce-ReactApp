@@ -23,7 +23,7 @@ function ProductList() {
     setflag(false);
   }
   return (
-    <Box sx={{ marginTop: "7rem" }}>
+    <Box sx={{ marginTop: "7rem" }} value="0">
       <Typography variant="h3" align="center">
         Product List
       </Typography>
