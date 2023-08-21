@@ -5,6 +5,7 @@ import { addproducts } from "../actions";
 import { useSelector, useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { Box, Button, TextField, Typography } from "@mui/material";
+import { toast } from "react-toastify";
 
 function AddProduct() {
   const products = useSelector((state) => state.products);
@@ -38,6 +39,7 @@ function AddProduct() {
     result.then((data) => {
       dispatch(addproducts([data, ...products]));
       navigate("/");
+      toast.success("Product Added successfully");
     });
     setName("");
     setCategory("");
@@ -81,6 +83,7 @@ function AddProduct() {
         fullWidth
         label="Price"
         id="fullWidth"
+        onChange={(e) => setPrice(e.target.value)}
       />
       <TextField
         sx={{ marginTop: "10px" }}

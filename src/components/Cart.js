@@ -3,6 +3,7 @@ import { useDispatch } from "react-redux";
 import { CartItems } from "../actions";
 import { updateCart, DeleteCart } from "../actions";
 import { Box, Typography, Button } from "@mui/material";
+import { toast } from "react-toastify";
 import AddCircleIcon from "@mui/icons-material/AddCircleOutline";
 import RemoveCircleIcon from "@mui/icons-material/RemoveCircle";
 
@@ -29,6 +30,7 @@ function Cart({ item }) {
   function handleCancel(item) {
     dispatchDelete(DeleteCart(item));
     dispatchTotal(CartItems());
+    toast.success("Item removed from the cart");
   }
   return (
     <Box

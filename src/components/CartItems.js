@@ -10,7 +10,11 @@ function CartItems() {
     return (total += item.price * item.qty);
   }, 0);
   let totalDiscount = CartItem.reduce((total, item) => {
-    return (total += (item.price * item.qty * item.discountPercentage) / 100);
+    let discont = item.discountPercentage;
+    if (isNaN(discont)) {
+      discont = 0;
+    }
+    return (total += (item.price * item.qty * discont) / 100);
   }, 0);
 
   if (CartItem.length === 0)

@@ -103,7 +103,7 @@ function ProductItem({ item }) {
         </Box>
         <Box sx={{ width: "33%", height: "10rem" }}>
           {item.edit ? (
-            <Typography>{item.title}</Typography>
+            <Typography sx={{ fontWeight: "bold" }}>{item.title}</Typography>
           ) : (
             <TextField
               id="outlined-basic"

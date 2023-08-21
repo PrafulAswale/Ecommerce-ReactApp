@@ -13,7 +13,7 @@ function ProductDetail({ item }) {
       item.qty = 1;
       dispatchCart(addCart(item));
       dispatchTotal(CartItems());
-      toast("item Added to cart", "success");
+      toast.success("item Added to cart");
     } else {
       dispatchCart(addCart(item));
       dispatchTotal(CartItems());
