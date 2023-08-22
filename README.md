@@ -1,6 +1,6 @@
-# Getting Started with Create React App
+# Shoppee E-commerce React-App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Shoppee Link](https://shoppeepa.netlify.app/).
 
 ## Available Scripts
 

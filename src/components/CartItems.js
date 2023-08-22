@@ -6,9 +6,11 @@ import { Box, Typography } from "@mui/material";
 function CartItems() {
   let CartItem = useSelector((state) => state.cart);
   let totalItem = useSelector((state) => state.totalCart);
+  //total price
   let totalPrice = CartItem.reduce((total, item) => {
     return (total += item.price * item.qty);
   }, 0);
+  //calculating discount
   let totalDiscount = CartItem.reduce((total, item) => {
     let discont = item.discountPercentage;
     if (isNaN(discont)) {
@@ -17,6 +19,7 @@ function CartItems() {
     return (total += (item.price * item.qty * discont) / 100);
   }, 0);
 
+  // if cart is empty
   if (CartItem.length === 0)
     return (
       <Typography variant="h1" sx={{ textAlign: "center", marginTop: "5rem" }}>

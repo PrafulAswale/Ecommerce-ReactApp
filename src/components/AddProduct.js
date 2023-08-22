@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { Box, Button, TextField, Typography } from "@mui/material";
 import { toast } from "react-toastify";
 
+// add product component
 function AddProduct() {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ function AddProduct() {
   let url =
     "https://my-json-server.typicode.com/prafulaswale/database/products";
 
+  // event handler
   function handleSubmit(e) {
     e.preventDefault();
     let result = customFetch(url, {
@@ -37,6 +39,7 @@ function AddProduct() {
       method: "POST",
     });
     result.then((data) => {
+      //dispatching data and redirecting to home page
       dispatch(addproducts([data, ...products]));
       navigate("/");
       toast.success("Product Added successfully");
@@ -48,6 +51,7 @@ function AddProduct() {
     setThumbmail("");
     setPrice("");
   }
+  //add product form
   return (
     <Box
       component="form"

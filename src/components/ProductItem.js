@@ -11,7 +11,6 @@ import customFetch from "../apiCall";
 import { toast } from "react-toastify";
 
 function ProductItem({ item }) {
-
   const [addedItem, setAddedItem] = useState(true);
   const [title, setTitle] = useState(item.title);
   const [price, setPrice] = useState(item.price);
@@ -24,10 +23,12 @@ function ProductItem({ item }) {
   const dispatchTotal = useDispatch();
   const dispatchProduct = useDispatch();
 
+  //event handler for product detail
   function handleClick(item) {
     dispatch(ProductToview(item));
     navigate(`/productdetails/${item.id}`);
   }
+  // event hadler for cart
   function handleCart(item) {
     if (addedItem) {
       item.qty = 1;
@@ -39,6 +40,8 @@ function ProductItem({ item }) {
       navigate("/cart");
     }
   }
+
+  // event handler for update
   function handleEdit(item) {
     item.edit = false;
     dispatchProduct(addproducts([...products]));

@@ -7,16 +7,18 @@ import { addproducts } from "../actions";
 
 function ProductList() {
   const data = useSelector((state) => state.products);
-  const [flag, setflag] = useState(false);
   const products = useSelector((state) => state.products);
   const dispatchSort = useDispatch();
   const dispatchCancel = useDispatch();
+  const [flag, setflag] = useState(false);
 
+  //sorting product according to price
   function handleSort() {
     let sortedData = products.sort((a, b) => a.price - b.price);
     dispatchSort(addproducts([...sortedData]));
     setflag(true);
   }
+  //undo sorting
   function cancelSort() {
     let products = JSON.parse(window.localStorage.getItem("products"));
     dispatchCancel(addproducts([...products]));

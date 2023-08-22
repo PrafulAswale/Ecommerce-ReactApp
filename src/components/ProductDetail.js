@@ -7,7 +7,7 @@ import { Box, Button, Typography } from "@mui/material";
 function ProductDetail({ item }) {
   const dispatchCart = useDispatch();
   const dispatchTotal = useDispatch();
-
+  //event handle for click/ add to cart
   function handleClick(item) {
     if (!item.qty) {
       item.qty = 1;
